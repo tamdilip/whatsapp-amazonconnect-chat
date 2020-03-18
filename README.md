@@ -1,2 +1,2 @@
 # whatsapp-amazonconnect-chat
-Node JS server for actively transferring real-time messages back and forth between WhatsApp and Amazon Connect Chat via Twilio's Whatsapp Business API Sandbox
+Node JS server for transferring real-time messages between WhatsApp and Amazon Connect Chat via Twilio's WhatsApp Business API Sandbox.

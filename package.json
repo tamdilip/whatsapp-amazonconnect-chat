@@ -1,0 +1,21 @@
+{
+  "name": "whatsappchat-twilioapi-amazonconnectchat",
+  "version": "1.0.0",
+  "description": "Node js server for actively transfering messages back and forth between Whatsapp and Amazon Connect Chat via Twilio API for Whatsapp Business API",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "aws-sdk": "2.613.0",
+    "body-parser": "1.19.0",
+    "express": "4.17.1",
+    "node-fetch": "2.6.0",
+    "twilio": "3.39.3",
+    "websocket": "1.0.31"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}
