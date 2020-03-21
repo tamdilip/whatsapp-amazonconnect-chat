@@ -33,8 +33,12 @@ This proof-of-concept is an integration between WhatsApp and Amazon Connect Chat
 
 ### Post Installation
 * Configure the ngrok url/Node server host URL in Twilio WhatsApp Sandbox - [Webhook](https://www.twilio.com/console/sms/whatsapp/sandbox)
+
 ** `WHEN A MESSAGE COMES IN` - https://xxxxxxxx.ngrok.io/
+
 ** `STATUS CALLBACK URL` - https://xxxxxxxx.ngrok.io/status-callback
+
+
 
 * All set now, keep your Amazon Connect Chat Interface as Available and try sending a text from your whatsapp to Twilio-WhatsApp-Business-Number and continue the conversation bi-directionally 😁😎
 
