@@ -34,9 +34,9 @@ This proof-of-concept is an integration between WhatsApp and Amazon Connect Chat
 ### Post Installation
 * Configure the ngrok url/Node server host URL in Twilio WhatsApp Sandbox - [Webhook](https://www.twilio.com/console/sms/whatsapp/sandbox)
 
-** `WHEN A MESSAGE COMES IN` - https://xxxxxxxx.ngrok.io/
+        ** `WHEN A MESSAGE COMES IN` - https://xxxxxxxx.ngrok.io/
 
-** `STATUS CALLBACK URL` - https://xxxxxxxx.ngrok.io/status-callback
+        ** `STATUS CALLBACK URL` - https://xxxxxxxx.ngrok.io/status-callback
 
 
 
