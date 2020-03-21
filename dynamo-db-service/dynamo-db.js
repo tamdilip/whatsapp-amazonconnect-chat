@@ -54,7 +54,7 @@ let getRecordByContactId = initialContactId => {
         console.error("Error::getRecordByContactId", err);
         reject(false);
       } else {
-        console.log("Success::getRecordByContactId", data.Items);
+        console.log("Success::getRecordByContactId");
         const { Items = [] } = data,
           [record] = Items;
         resolve(record);

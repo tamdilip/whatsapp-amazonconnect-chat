@@ -16,6 +16,9 @@ let initialiseChat = incomingData => {
         Channel: "CHAT"
       }
     };
+    //ISSUE:: InitialMessage attribute sent on initiating chat connection is not working as per API, though 'InitialMessage' is mentioned as a required param works fine without it.
+    //WORKAROUND:: Ugly hack done inorder to not miss the initial message by temporarily persisting them in DynamoDB and update them as '-SENT-' after manually forwarding the message.
+    //SDK-REFERENCE:: https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Connect.html#startChatContact-property
     connect.startChatContact(startChatParams, function (err, startChatResponse) {
       if (err) {
         console.log("Error::startChatContact", err);
@@ -41,6 +44,7 @@ let initialiseChat = incomingData => {
   });
 };
 
+//Forwards the message to Amazon Connect Chat Interface
 let sendMessageToChat = ({ existingCustomer, incomingData }) => {
   return new Promise((resolve, reject) => {
     var sendMessageParams = {
@@ -60,6 +64,7 @@ let sendMessageToChat = ({ existingCustomer, incomingData }) => {
   });
 };
 
+//Initiates an outgoing voice call between Customer and Agent
 let startOutboundCall = customerNumber => {
   const destNumber = customerNumber.replace("whatsapp:", "");
   const outboundParams = {

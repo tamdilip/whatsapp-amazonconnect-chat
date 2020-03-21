@@ -17,6 +17,7 @@ let sendWhatsappMessageToConnect = async req => {
       };
       savedCustomer && Websocket.establishConnection(socketData);
     } else {
+      //Initiates an outgoing voice call between Customer and Agent when the respective message content matches
       if (incomingData.Body === "call me")
         ConnectService.startOutboundCall(existingCustomer.customerNumber);
       const sentMessage = await ConnectService.sendMessageToChat({ existingCustomer, incomingData });

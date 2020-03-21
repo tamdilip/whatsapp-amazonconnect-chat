@@ -17,9 +17,9 @@ app.post("/status-callback", function(req, res) {
 });
 
 app.get("/", function(req, res) {
-  res.send("Standalone server is alive");
+  res.send("I am alive :)");
 });
 
 app.listen(3000, function() {
-  console.log("Started on PORT 3000");
+  console.log("SERVER_RUNNING_ON_PORT::3000");
 });

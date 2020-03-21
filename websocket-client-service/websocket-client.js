@@ -3,6 +3,7 @@ const DatabaseService = require("../dynamo-db-service/dynamo-db");
 const ConnectService = require("../amazon-connect-service/connect");
 const TwilioService = require("../twilio-client-service/twilio-client");
 
+//Persists Amazon Connect Chat Websocket client connections
 let activeClients = [];
 
 let establishConnection = masterConnectData => {
@@ -13,7 +14,7 @@ let establishConnection = masterConnectData => {
   };
 
   client.onopen = function () {
-    console.log("WebSocke::Client Connected");
+    console.log("WebSocket::Client Connected");
     client.send(
       JSON.stringify({
         topic: "aws/subscribe",
@@ -23,7 +24,7 @@ let establishConnection = masterConnectData => {
   };
 
   client.onclose = function () {
-    console.log("Wesocket::Client connection closed");
+    console.log("Websocket::Client connection closed");
   };
 
   client.onmessage = async function (e) {
@@ -32,6 +33,7 @@ let establishConnection = masterConnectData => {
 
     if (typeof content === "string") {
       const socketMessage = JSON.parse(content);
+      console.log("CONNECT::", socketMessage.ParticipantRole, "::", socketMessage.ContentType)
       if (socketMessage.ContentType === "application/vnd.amazonaws.connect.event.participant.joined" && socketMessage.ParticipantRole === "AGENT") {
         const customerRecord = await DatabaseService.getRecordByContactId(socketMessage.InitialContactId);
         if (customerRecord && customerRecord.initialMessage !== "-SENT-")
