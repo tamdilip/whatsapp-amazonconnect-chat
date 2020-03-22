@@ -11,14 +11,16 @@ This proof-of-concept is an integration between WhatsApp and Amazon Connect Chat
 ### Usage of SDK API's 
 ![Image of sdk-api-flow](https://raw.githubusercontent.com/tamdilip/whatsapp-amazonconnect-chat/master/docs/SDK-API-FLOW.png)
 
+
+## Local Testing
+==================
+
 #### Prerequisites
 * Create and configure an [Amazon Connect Instance](https://console.aws.amazon.com/connect/onboarding).
 * Create and configure an [Twilio WhatsApp API Sandbox](https://www.twilio.com/console/sms/whatsapp/sandbox).
 * Create and configure an [Dynamo DB Table](https://console.aws.amazon.com/dynamodb/home?region=us-east-1#create-table:).
 * Update the required environmet variables in `config/env.js`
 
-## Local Testing
-==================
 #### Node Server setup
 
 ```sh
@@ -37,6 +39,7 @@ This proof-of-concept is an integration between WhatsApp and Amazon Connect Chat
 * Configure the ngrok url/Node server host URL in Twilio WhatsApp Sandbox - [Webhook](https://www.twilio.com/console/sms/whatsapp/sandbox)
 
     > `WHEN A MESSAGE COMES IN` - https://xxxxxxxx.ngrok.io/
+    
     > `STATUS CALLBACK URL` - https://xxxxxxxx.ngrok.io/status-callback
 
 
