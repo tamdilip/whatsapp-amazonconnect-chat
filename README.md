@@ -1,5 +1,5 @@
 # whatsapp-amazonconnect-chat
-[![Generic badge](https://img.shields.io/badge/Build-Passing-blue.svg)]() [![Generic badge](https://img.shields.io/badge/Issues-0%20Open-green.svg)]()
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-green?style=flat-square&logo=codesandbox)](https://codesandbox.io/s/github/tamdilip/whatsapp-amazonconnect-chat)
 
 Node JS server for transferring real-time messages between WhatsApp and Amazon Connect Chat using Twilio's WhatsApp Business API Sandbox via Server-Side Websocket Clients.
 
