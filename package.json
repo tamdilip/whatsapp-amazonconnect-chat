@@ -6,18 +6,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "start-dev": "nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "aws-sdk": "2.613.0",
-    "body-parser": "1.19.0",
     "express": "4.17.1",
     "node-fetch": "2.6.1",
     "twilio": "3.39.3",
     "websocket": "1.0.31"
   },
   "devDependencies": {
-    "nodemon": "1.18.4"
+    "nodemon": "^1.18.4"
   },
   "keywords": []
 }
