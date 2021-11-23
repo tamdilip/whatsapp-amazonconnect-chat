@@ -1,5 +1,5 @@
-const ENV = require("../config/env");
-const { AWS } = require("../config/config");
+const ENV = require("../utils/env");
+const { AWS } = require("../utils/config");
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 let getRecordByNumber = async customerNumber => {

@@ -1,5 +1,5 @@
-const ENV = require("../config/env");
-const { TwilioClient } = require("../config/config");
+const ENV = require("../utils/env");
+const { TwilioClient } = require("../utils/config");
 
 let sendMessage = (content, customerNumber) => {
   TwilioClient.messages

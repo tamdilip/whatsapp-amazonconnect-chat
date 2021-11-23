@@ -23,7 +23,7 @@ Esta prueba de concepto es una integración entre WhatsApp y Amazon Connect Chat
 - Cree y configure una [Instancia de Amazon Connect](https://console.aws.amazon.com/connect/onboarding).
 - Cree y configure su [Twilio WhatsApp API Sandbox](https://www.twilio.com/console/sms/whatsapp/sandbox).
 - Cree y configure una [Dynamo DB Table](https://console.aws.amazon.com/dynamodb/home?region=us-east-1#create-table:).
-- Actualice las variables de entorno requeridas en `config/env.js`
+- Actualice las variables de entorno requeridas en `utils/env.js`
 
 Para continuar, podemos profundizar en el archivo de configuración env.js en la carpeta /config del repositorio, lo que nos da una lista de parámetros a completar por completo, para que todo funcione correctamente.
 

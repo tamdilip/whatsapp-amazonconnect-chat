@@ -1,5 +1,5 @@
-const ENV = require('../config/env')
-const { AWS } = require('../config/config')
+const ENV = require('../utils/env')
+const { AWS } = require('../utils/config')
 
 const connect = new AWS.Connect()
 const connectparticipant = new AWS.ConnectParticipant()
