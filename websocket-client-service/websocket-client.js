@@ -1,3 +1,4 @@
+const ENV = require("../config/env");
 const W3CWebSocket = require("websocket").w3cwebsocket;
 const DatabaseService = require("../dynamo-db-service/dynamo-db");
 const ConnectService = require("../amazon-connect-service/connect");
@@ -5,6 +6,8 @@ const TwilioService = require("../twilio-client-service/twilio-client");
 
 //Persists Amazon Connect Chat Websocket client connections
 let activeClients = [];
+const rolesAllowedToForward = ['AGENT'];
+ENV.ENABLE_AMAZON_CONNECT_SYSTEM_MESSAGES && rolesAllowedToForward.push('SYSTEM');
 
 let establishConnection = masterConnectData => {
   let client = new W3CWebSocket(masterConnectData.websocketUrl);
@@ -39,7 +42,7 @@ let establishConnection = masterConnectData => {
         if (customerRecord && customerRecord.initialMessage !== "-SENT-")
           ConnectService.sendMessageToChat({ existingCustomer: customerRecord, incomingData: { Body: customerRecord.initialMessage } });
       }
-      if (socketMessage.ContentType === "text/plain" && socketMessage.ParticipantRole === "AGENT") {
+      if (socketMessage.ContentType === "text/plain" && rolesAllowedToForward.includes(socketMessage.ParticipantRole)) {
         const customerRecord = await DatabaseService.getRecordByContactId(socketMessage.InitialContactId);
         if (customerRecord)
           TwilioService.sendMessage(socketMessage.Content, customerRecord.customerNumber);
