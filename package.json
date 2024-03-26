@@ -11,7 +11,7 @@
   "dependencies": {
     "aws-sdk": "2.613.0",
     "body-parser": "1.19.0",
-    "express": "4.17.1",
+    "express": "4.19.2",
     "node-fetch": "2.6.1",
     "twilio": "3.39.3",
     "websocket": "1.0.31"
